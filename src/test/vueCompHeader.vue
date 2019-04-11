@@ -31,6 +31,7 @@
         },
         methods: {
           goto: function (url) {
+            this.$emit('changeHover');
             this.$router.push({name: url})
           }
         }

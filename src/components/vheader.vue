@@ -10,8 +10,8 @@
                 <div @click="goto(item.url)">
                   {{item.name}}
                 </div>
-                <div class="li-content">
-                  <comp-header-a :items="item.value">
+                <div id="header-url" class="li-content">
+                  <comp-header-a :items="item.value" @changeHover="hoverHidden()">
                   </comp-header-a>
                 </div>
               </li>
@@ -102,6 +102,12 @@
           },
           goto: function (url) {
             this.$router.push({name: url})
+          },
+          hoverHidden: function () {
+            $("#header-url").addClass('li-content-h');
+            setTimeout(function () {
+              $("#header-url").removeClass('li-content-h');
+            },500)
           }
         },
         components: {
@@ -233,6 +239,10 @@
     justify-content: space-between;
     align-items: flex-start;
     align-content: space-between;
+  }
+
+  .li-content-h{
+    display: none !important
   }
 
   .vheader-item{
