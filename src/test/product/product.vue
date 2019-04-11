@@ -1,6 +1,8 @@
 <template>
   <div class="product">
-
+     <div class="product-content">
+       产品模块
+     </div>
   </div>
 </template>
 
@@ -16,9 +18,16 @@
 </script>
 
 <style scoped>
+
 .product{
   width: 100%;
   height: 600px;
-  background-color: #7ca1ff;
 }
+
+ .product-content{
+   display: flex;
+   justify-content: center;
+   font-size: 16px;
+   color: #FFFFFF;
+ }
 </style>

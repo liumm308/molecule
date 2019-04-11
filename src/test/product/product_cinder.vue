@@ -1,10 +1,22 @@
 <template>
-  <div class="product-cinder"></div>
+  <div class="product-cinder">
+    <div class="product-cinder-content">
+      云存储模块
+    </div>
+  </div>
 </template>
 
 <script>
     export default {
-        name: ""
+        name: "product_cinder",
+        data: function () {
+          return{
+
+          }
+        },
+        props: {
+
+        }
     }
 </script>
 
@@ -12,7 +24,12 @@
   .product-cinder{
     width: 100%;
     height: 600px;
-    background-color: #9a6e3a;
+    background-color: rgba(154, 110, 58, 0.1);
+  }
+
+  .product-cinder-content{
+    font-size: 16px;
+    color: #FFFFFF;
   }
 
 </style>
