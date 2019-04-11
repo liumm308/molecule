@@ -58,9 +58,9 @@
               },
               {
                 name: '解决方案',
-                url: "product",
+                url: "solution",
                 value: [
-                  {name: "通用解决方案", url: "product", content: [{name: "网站"},{name: "IPv6解决方案"},{name: "企业互联网架构"}]},
+                  {name: "通用解决方案", url: "public_solution", content: [{name: "网站"},{name: "IPv6解决方案"},{name: "企业互联网架构"}]},
                   {name: "行业解决方案", url: "product", content: [{name: "新金融 "},{name: "新制造"},{name: "智能工业"},{name: "大媒体"},{name: "交通物流"},{name: "教育"}]},
                   {name: "安全解决方案", url: "product", content: [{name: " 新零售安全"},{name: "政务云安全"},{name: "互联网金融安全"},{name: "社交/媒体spam"},{name: "游戏安全"}]},
 

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Main from '@/components/Main'
 import ProductRouter from './productRouter'
+import SolutionRouter from './solutionRouter'
 
 
 Vue.use(Router);
@@ -51,6 +52,7 @@ export default new Router({
         }
       ]
     },
-    ...ProductRouter
+    ...ProductRouter,
+    ...SolutionRouter
   ]
 })
