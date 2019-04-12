@@ -5,12 +5,12 @@
         <div class="a">
           <i class="fa fa-bars icon-size" aria-hidden="true"></i>
           <div class="icon-content">
-            <ul class="subIcon">
+            <ul id="header-url" class="subIcon">
               <li v-for="(item,index) in hData" :key="index">
                 <div @click="goto(item.url)">
                   {{item.name}}
                 </div>
-                <div id="header-url" class="li-content">
+                <div class="li-content">
                   <comp-header-a :items="item.value" @changeHover="hoverHidden()">
                   </comp-header-a>
                 </div>
