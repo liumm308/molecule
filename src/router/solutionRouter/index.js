@@ -21,6 +21,13 @@ export default[{
         title: '通用解决方案',
       },
       component: () => import('@/test/solution/public_solution.vue')
+    },{
+      path: '/profession_solution',
+      name: 'profession_solution',
+      meta: {
+        title: '行业解决方案',
+      },
+      component: () => import('@/test/solution/profession_solution')
     }
   ]
 }]

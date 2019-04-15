@@ -1,12 +1,12 @@
 <template>
   <div class="public-solution">
     <div class="public-solution-content">
+      <el-table>
+        <el-table-column width=""></el-table-column>
+      </el-table>
       输入搜索内容：
       <Input prefix="ios-contact" placeholder="Enter name" style="width: auto">
       </Input>
-      <Input suffix="ios-search" placeholder="Enter text" style="width: auto">
-      </Input>
-    </Input>
     </div>
   </div>
 </template>
