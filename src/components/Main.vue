@@ -30,24 +30,10 @@
       this.getWindowSize();
     },
     mounted(){
-      this.getBackGroundSize();
-      this.getWindowSize();
+
     },
     methods:{
-      getBackGroundSize: function () {
-        let _Win_width=$(window).width();
-        this.note.backgroundSize = _Win_width+"px"+" "+ "auto";
-      },
-      getWindowSize: function () {
-        let headerHeight =$('.m-header').height();
-        let footerHeight = $('.m-footer').height();
-        let windowHeight = $(window).height();
-        let contentHeight = $('.m-content').height();
-        if(windowHeight > headerHeight+footerHeight +contentHeight){
-          let _Height=windowHeight-headerHeight-footerHeight;
-          $('.m-content').height(_Height)
-        }
-      }
+
     },
     components: {
         Header: Header,
@@ -68,14 +54,19 @@
     height: 55px;
   }
   .m-content{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
     width: 100%;
     background-color: rgba(15, 189, 255, 0.05);
+
   }
 
   .m-footer{
     width: 100%;
     height: 300px;
   }
+
 
 
 </style>
