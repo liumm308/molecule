@@ -5,6 +5,7 @@
       <router-view></router-view>
     </div>
     <Footer class="m-footer"></Footer>
+    <WaterMark :inputText="markText"></WaterMark>
   </div>
 </template>
 
@@ -12,6 +13,7 @@
   import $ from 'jquery'
   import Header from './vheader'
   import Footer from './vfooter'
+  import WaterMark from '../common_component/waterMark'
 
   export default {
     name: "Main",
@@ -22,7 +24,8 @@
           backgroundRepeat: "no-repeat",
           backgroundSize: null,
           marginTop: "5px",
-        }
+        },
+        markText: 'liumm308'
       }
     },
     created(){
@@ -37,7 +40,8 @@
     },
     components: {
         Header: Header,
-        Footer: Footer
+        Footer: Footer,
+        WaterMark:  WaterMark
     }
   }
 
