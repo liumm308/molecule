@@ -29,8 +29,6 @@
       }
     },
     created(){
-      this.getBackGroundSize();
-      this.getWindowSize();
     },
     mounted(){
 
