@@ -1,26 +1,26 @@
 <template>
-<!--  <div class="product-classfication">
-    &lt;!&ndash;<div class="product-classfication-content" @click = 'testSomething'>产品分类模块</div><div class="list_group">testSomething<div class="dddd">subDiv</div></div>&ndash;&gt;
-  </div>-->
-  <div id="tab">
-    <ul class="list_group">
-      <li class=".content-test-li"><a class="active" href="javascript:;">1</a></li>
-      <li class=".content-test-li"><a href="javascript:;">2</a></li>
-      <li class=".content-test-li"><a href="javascript:;">3</a></li>
-      <li class=".content-test-li"><a href="javascript:;">4</a></li>
-    </ul>
-    <div class="box">
-      <div class="content-test-dq">
-        <img alt="1" src="../../assets/img/shuziyi.png">
-      </div>
-      <div class="content-test-dq">
-        <img alt="2" src="../../assets/img/shuzier.png">
-      </div>
-      <div class="content-test-dq">
-        <img alt="3" src="../../assets/img/shuzisan.png">
-      </div>
-      <div class="content-test-dq">
-        <img alt="4" src="../../assets/img/shuzisi.png">
+  <div class="product-classfication">
+    <div class="product-classfication-content" @click = 'testSomething'>产品分类模块</div><div class="list_group">testSomething<div class="dddd">subDiv</div></div>
+    <div id="tab">
+      <ul class="list_group">
+        <li class=".content-test-li"><a class="active" href="javascript:;">1</a></li>
+        <li class=".content-test-li"><a href="javascript:;">2</a></li>
+        <li class=".content-test-li"><a href="javascript:;">3</a></li>
+        <li class=".content-test-li"><a href="javascript:;">4</a></li>
+      </ul>
+      <div class="box">
+        <div class="content-test-dq">
+          <img alt="1" src="../../assets/img/shuziyi.png">
+        </div>
+        <div class="content-test-dq">
+          <img alt="2" src="../../assets/img/shuzier.png">
+        </div>
+        <div class="content-test-dq">
+          <img alt="3" src="../../assets/img/shuzisan.png">
+        </div>
+        <div class="content-test-dq">
+          <img alt="4" src="../../assets/img/shuzisi.png">
+        </div>
       </div>
     </div>
   </div>
@@ -29,6 +29,7 @@
 <script>
 
   import {$d} from './components/myJs'
+  import myJs from '../commonJs/commonJs'
 
     export default {
         name: "product_classfication",
@@ -66,7 +67,7 @@
               console.log(d);
               console.log(this.$el.childNodes);
             }*/
-
+            console.log(myJs);
             console.log(window.document.nodeType);
           }
         }
