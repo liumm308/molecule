@@ -67,7 +67,7 @@
               console.log(d);
               console.log(this.$el.childNodes);
             }*/
-            console.log(myJs);
+            console.log(myJs.getExplore());
             console.log(window.document.nodeType);
           }
         }
@@ -101,10 +101,10 @@
   .box{
     clear: both;
   }
-  .content{
+  .content-test-dq{
     display: none;
   }
-  .content img{
+  .content-test-dq img{
     border: 1px solid black;
     width: 400px;height: 300px;
   }

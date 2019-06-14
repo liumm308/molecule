@@ -1071,6 +1071,34 @@ var ecDo = {
       }
     }
     return strre + "..."
+  },
+
+  /*
+  *
+  * @desc 获取浏览器类型和版本
+  * @return {String}
+  * @input null
+  * */
+  getExplore: function() {
+    var sys = {},
+      us = navigator.userAgent.toLowerCase(),
+      s;
+    (s = us.match(/rv:([\d.]+)\) like gecho/)) ? sys.ie = s[1] :
+      (s = us.match(/msie ([\d.]+)/)) ? sys.ie = s[1] :
+        (s = us.match(/edge\/([\d.]+)/)) ? sys.edge = s[1] :
+          (s = us.match(/firefox\/([\d.]+)/)) ? sys.firefox = s[1] :
+            (s = us.match(/(?:opera|opr).([\d.]+)/)) ? sys.opera = s[1] :
+              (s = us.match(/chrome\/([\d.]+)/)) ? sys.chrome = s[1] :
+                (s = us.match(/version\/([\d.]+).*safari/)) ? sys.safari = s[1] : 0;
+
+    //输出
+    if (sys.ie) return ('IE: ' + sys.ie);
+    if (sys.edge) return ('EDGE: ' + sys.edge);
+    if (sys.firefox) return ('FIREFOX: ' + sys.firefox);
+    if (sys.chrome) return ('CHROME: ' + sys.chrome);
+    if (sys.opera) return ('OPERA: ' + sys.opera);
+    if (sys.safari) return ('SAFARI: ' + sys.safari);
+    return "Unknown"
   }
 };
 
