@@ -67,9 +67,55 @@
               console.log(d);
               console.log(this.$el.childNodes);
             }*/
-            console.log(myJs.getExplore());
-            console.log(window.document.nodeType);
-          }
+            /*   console.log(myJs);
+            let myJsExtend = (function($){
+              $.testExtend = function() {
+                alert("Hello Extend");
+              };
+              return $
+            })(myJs);
+            console.log(myJsExtend);
+            myJsExtend.testExtend();*/
+            //console.log(window);
+            //let appVersion = 'navigator' in window && 'appVersion' in navigator && navigator.appVersion.toLowerCase() || '';
+            //console.log(appVersion);
+            //console.log(navigator.vendor);
+
+            function Person(){
+
+            }
+            Person.prototype = {
+              name: 'Nicholas',
+              age: 29,
+              job: 'Software Engineer',
+              showName: function () {
+                alert(this.name);
+              }
+            };
+
+            Object.defineProperty(Person.prototype,'constructor', {
+              enumerable: false,
+              value: Person
+            });
+
+            let person = new Person();
+            console.log(person.name);
+
+            this.handleSubmit();
+          },
+          handleSubmit () {
+            let paramslmm = {
+              baseInfo: {
+                id: "",
+              }
+            };
+            this.$http.post('api/test/queryUserById', paramslmm)
+              .then((response) => {
+                console.log(response);
+              }).catch((res)=> {
+                console.log(res);
+            })
+          },
         }
     }
 </script>

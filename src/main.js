@@ -14,6 +14,9 @@ import 'font-awesome/css/font-awesome.min.css' //使用图标
 import './assets/Iconfont/iconfont.css'
 require ('./assets/Iconfont/iconfont.js');
 
+import axios from 'axios'
+Vue.prototype.$http = axios;
+
 Vue.use(ElementUI);
 Vue.use(iView);
 Vue.use(animate);

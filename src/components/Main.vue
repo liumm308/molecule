@@ -5,7 +5,7 @@
       <router-view></router-view>
     </div>
     <Footer class="m-footer"></Footer>
-    <WaterMark :inputText="markText"></WaterMark>
+    <!--<WaterMark :inputText="markText"></WaterMark>-->
   </div>
 </template>
 

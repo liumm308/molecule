@@ -25,7 +25,7 @@
       <div class="vheader-edit">
         <span><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;购物车</span>
         <span><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;邮箱</span>
-        <span><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;登录</span>
+        <span @click="login"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;登录</span>
         <span><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;退出</span>
       </div>
     </div>
@@ -102,6 +102,9 @@
           },
           goto: function (url) {
             this.$router.push({name: url})
+          },
+          login: function(){
+            this.$router.push({path: 'login'});
           },
           hoverHidden: function () {
             $("#header-url").addClass('li-content-h');

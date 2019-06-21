@@ -1,5 +1,5 @@
 /*1.1.4*/
-var ecDo = {
+let ecDo = new Object({
   /*字符串*/
   //去除空格  type 1-所有空格  2-前后空格  3-前空格 4-后空格
   //trim('  1235asd',1)
@@ -1100,7 +1100,7 @@ var ecDo = {
     if (sys.safari) return ('SAFARI: ' + sys.safari);
     return "Unknown"
   }
-};
+});
 
 export default ecDo
 
