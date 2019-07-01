@@ -32,6 +32,9 @@
 </template>
 
 <script>
+
+  import { mapGetters, mapActions, mapState } from 'vuex'
+
     export default {
         name: "login",
         data: function () {
@@ -95,6 +98,12 @@
                   .then((response) => {
                      if(response.data.body.length !== 0 && response.data.code === 200){
                         this.$router.push({path: '/'});
+                        //console.log(this.$store.state.otherContents);
+                        //console.log(this.$store.getters.showOthersContent);
+                       this.$store.commit('setNewData',"dddddddddddddddd");
+                       this.$store.commit("setOthersContent",'others Data');
+                       //console.log(this.$store.getters.showOthersContent);
+                        console.log(this.loginInfo);
                      } else {
                        this.$Message.error('登录失败');
                      }
@@ -108,6 +117,11 @@
           }
         },
         mounted(){
+        },
+        computed: {
+          ...mapGetters({
+           loginInfo: 'getLoginInfo'
+          })
         }
     }
 </script>
