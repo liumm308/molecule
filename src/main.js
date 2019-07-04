@@ -33,6 +33,7 @@ router.beforeEach((to, from, next) => {
     console.log(LocalStorage.outItemBykey("LoginInfo"));
     if(LocalStorage.outItemBykey("LoginInfo")===undefined || LocalStorage.outItemBykey("LoginInfo")=== null){
       store.dispatch("setLoginInfo",LocalStorage.outItemBykey("LoginInfo"));
+      store.dispatch("setLoginState",true);
       next({
         path: "/login"
       });

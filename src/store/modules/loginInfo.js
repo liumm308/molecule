@@ -1,24 +1,24 @@
 
-const loginInfoStore = {
+const state = {
   data: "loginInformation",
-  isLogin: true
+  isLogin: false
 };
 
 const getters = {
-  getLoginInfo(loginInfoStore){
-    return loginInfoStore.data;
+  getLoginInfo(state){
+    return state.data;
   },
-  isLogin(loginInfoStore){
-    return loginInfoStore.isLogin
+  isLogin(state){
+    return state.isLogin
   }
 };
 
 const mutations = {
-  setLoginInfo(loginInfoStore,val){
-    loginInfoStore.data = val;
+  setLoginInfo(state,val){
+    state.data = val;
   },
-  setLoginState(loginInfoStore,state){
-    loginInfoStore.isLogin = state
+  setLoginState(state,val){
+    state.isLogin = val
   }
 };
 
@@ -26,14 +26,14 @@ const actions = {
   setLoginInfo(context,val){
     context.commit('setLoginInfo',val)
   },
-  setLoginState(context,state){
-    context.commit('setLoginState',state)
+  setLoginState(context,val){
+    context.commit('setLoginState',val)
   }
 };
 
 
 export default {
-  loginInfoStore,
+  state,
   getters,
   mutations,
   actions

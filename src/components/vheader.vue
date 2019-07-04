@@ -19,7 +19,7 @@ import loginInfo from "../store/modules/loginInfo";
             </ul>
           </div>
         </div>
-        <div class="vheader-item">
+        <div class="vheader-item" @click="testMyVue">
           沃云
         </div>
       </div>
@@ -27,6 +27,7 @@ import loginInfo from "../store/modules/loginInfo";
         <span><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;购物车</span>
         <span><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;邮箱</span>
         <span v-if="!isLogin" @click="login"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;登录</span>
+        <span v-else @click="outLogin"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;退出</span>
       </div>
     </div>
     <sub-header></sub-header>
@@ -112,12 +113,21 @@ import loginInfo from "../store/modules/loginInfo";
             setTimeout(function () {
               $("#header-url").removeClass('li-content-h');
             },500)
+          },
+          testMyVue: function () {
+            console.log(this.isLogin);
+            console.log(this.loginInfo);
+          },
+          outLogin: function () {
+            this.$store.dispatch("setLoginInfo",'');
+            this.$store.dispatch("setLoginState",false);
+            this.LocalStorage.clearItem();
           }
         },
         computed: {
           ...mapGetters({
-            loginInfo: 'getLoginInfo',
-            isLogin: 'isLogin'
+            loginInfo:'getLoginInfo',
+            isLogin:'isLogin'
           }),
         },
         components: {

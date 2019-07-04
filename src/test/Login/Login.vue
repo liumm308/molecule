@@ -100,8 +100,8 @@
                        this.$store.dispatch("setLoginInfo",response.data.body[0]);
                        this.$store.dispatch("setLoginState",true);
                        this.LocalStorage.inItemByKey("LoginInfo", response.data.body[0]);
-                       console.log(this.loginInfo);
-                       this.$router.push({path: '/'});
+                       this.$Message.success("登录成功");
+                       this.$router.push({path: '/index'});
                         //console.log(this.$store.state.otherContents);
                         //console.log(this.$store.getters.showOthersContent);
                        //this.$store.commit('setNewData',"dddddddddddddddd");
