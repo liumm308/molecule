@@ -12,7 +12,10 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/index'
+      redirect: '/login',
+      meta: {
+        needIn: false
+      }
     },
     {
       name:"Router",
@@ -24,6 +27,7 @@ export default new Router({
           name: 'vueTest',
           meta: {
             title: '测试内容',
+            needIn: true
           },
           component: () => import('@/test/vueTest.vue')
         },
@@ -32,6 +36,7 @@ export default new Router({
           name: 'home',
           meta: {
             title: '首页',
+            needIn: true
           },
           component: () => import('@/test/contents.vue')
         },
@@ -40,6 +45,7 @@ export default new Router({
           name: 'go',
           meta: {
             title: '流程图',
+            needIn: true
           },
           component: () => import('@/test/gojs/test.vue')
         },
@@ -48,6 +54,7 @@ export default new Router({
           name: 'card',
           meta: {
             title: '卡片',
+            needIn: true
           },
           component: () => import('@/test/cardContainer.vue')
         }

@@ -29,7 +29,7 @@
 <script>
 
   import {$d} from './components/myJs'
-  import myJs from '../commonJs/commonJs'
+  import myJs from '../../common/commonJs'
 
     export default {
         name: "product_classfication",
@@ -81,7 +81,7 @@
             //console.log(appVersion);
             //console.log(navigator.vendor);
 
-            function Person(){
+           /* function Person(){
 
             }
             Person.prototype = {
@@ -99,9 +99,20 @@
             });
 
             let person = new Person();
-            console.log(person.name);
+            console.log(person.name);*/
 
-            this.handleSubmit();
+            //this.handleSubmit();
+            let data = {
+              name: 'zhangsan',
+              age: 18,
+              sex: 'man',
+              job: 'student'
+            };
+
+            this.LocalStorage.inItemByKey('zhangsan',data);
+            let tempData = this.LocalStorage.outItemBykey('zhangsan');
+            console.log(tempData);
+
           },
           handleSubmit () {
             let paramslmm = {

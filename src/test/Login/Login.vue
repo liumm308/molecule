@@ -54,7 +54,7 @@
 
           //校验登录名称的格式及长度
           const validateLoginPassword = (rule, value, callback) => {
-            if(value == ""){
+            if(value === ""){
               return callback('请输入登录密码');
             }
             else{
@@ -97,13 +97,17 @@
                 that.$http.post('api/test/loginByName', loginParams)
                   .then((response) => {
                      if(response.data.body.length !== 0 && response.data.code === 200){
-                        this.$router.push({path: '/'});
+                       this.$store.dispatch("setLoginInfo",response.data.body[0]);
+                       this.$store.dispatch("setLoginState",true);
+                       this.LocalStorage.inItemByKey("LoginInfo", response.data.body[0]);
+                       console.log(this.loginInfo);
+                       this.$router.push({path: '/'});
                         //console.log(this.$store.state.otherContents);
                         //console.log(this.$store.getters.showOthersContent);
-                       this.$store.commit('setNewData',"dddddddddddddddd");
-                       this.$store.commit("setOthersContent",'others Data');
+                       //this.$store.commit('setNewData',"dddddddddddddddd");
+                       //this.$store.commit("setOthersContent",'others Data');
                        //console.log(this.$store.getters.showOthersContent);
-                        console.log(this.loginInfo);
+
                      } else {
                        this.$Message.error('登录失败');
                      }

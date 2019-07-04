@@ -12,6 +12,7 @@ export default[{
       name: 'solution',
       meta: {
         title: '解决方案',
+        needIn: true
       },
       component: () => import('@/test/solution/solution.vue')
     },{
@@ -19,6 +20,7 @@ export default[{
       name: 'public_solution',
       meta: {
         title: '通用解决方案',
+        needIn: true
       },
       component: () => import('@/test/solution/public_solution.vue')
     },{
@@ -26,6 +28,7 @@ export default[{
       name: 'profession_solution',
       meta: {
         title: '行业解决方案',
+        needIn: true
       },
       component: () => import('@/test/solution/profession_solution')
     }

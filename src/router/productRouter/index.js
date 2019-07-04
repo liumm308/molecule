@@ -12,6 +12,7 @@ export default[{
       name: 'product',
       meta: {
         title: '产品管理',
+        needIn: true
       },
       component: () => import('@/test/product/product.vue')
     },{
@@ -19,13 +20,15 @@ export default[{
       name: 'product_classification',
       meta: {
         title: '产品分类',
+        needIn: true
       },
       component: () => import('@/test/product/product_classification.vue')
     },{
       path: '/product_competitive',
       name:"product_competitive",
       meta:{
-        title:'产品精选'
+        title:'产品精选',
+        needIn: true
       },
       component: () => import('@/test/product/product_competitive.vue')
     },{
@@ -33,13 +36,15 @@ export default[{
       name: 'product_redis',
       meta: {
         title: '云数据库',
+        needIn: true
       },
       component: () => import('@/test/product/product_redis.vue')
     },{
       path: '/product_nova',
       name:"product_nova",
       meta:{
-        title:'云服务器'
+        title:'云服务器',
+        needIn: true
       },
       component: () => import('@/test/product/product_nova.vue')
     },{
@@ -47,13 +52,15 @@ export default[{
       name: 'product_cinder',
       meta: {
         title: '云存储',
+        needIn: true
       },
       component: () => import('@/test/product/product_cinder.vue')
     },{
       path: '/product_docker',
       name:"product_docker",
       meta:{
-        title:'容器服务'
+        title:'容器服务',
+        needIn: true
       },
       component: () => import('@/test/product/product_docker.vue')
     }

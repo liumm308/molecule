@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from  './store'
+import LocalStorage from './common/localStorage'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import iView from 'iview'
@@ -17,6 +18,7 @@ require ('./assets/Iconfont/iconfont.js');
 
 import axios from 'axios'
 Vue.prototype.$http = axios;
+Vue.prototype.LocalStorage = LocalStorage;
 
 Vue.use(ElementUI);
 Vue.use(iView);
@@ -25,8 +27,22 @@ Vue.config.productionTip = false;
 
 
 router.beforeEach((to, from, next) => {
-  iView.LoadingBar.start();
-  next();
+
+  if(to.meta.needIn){
+    iView.LoadingBar.start();
+    console.log(LocalStorage.outItemBykey("LoginInfo"));
+    if(LocalStorage.outItemBykey("LoginInfo")===undefined || LocalStorage.outItemBykey("LoginInfo")=== null){
+      store.dispatch("setLoginInfo",LocalStorage.outItemBykey("LoginInfo"));
+      next({
+        path: "/login"
+      });
+    } else {
+      next();
+    }
+  } else {
+    next();
+  }
+
 });
 
 router.afterEach(route => {

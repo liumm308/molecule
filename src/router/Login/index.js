@@ -12,6 +12,7 @@ export default[{
       name: 'login',
       meta: {
         title: '登录',
+        needIn: false
       },
       component: () => import('@/test/Login/Login.vue')
     }

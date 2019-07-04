@@ -1,3 +1,4 @@
+import loginInfo from "../store/modules/loginInfo";
 <template>
   <div class="vheader">
     <div class="vheader-title">
@@ -25,8 +26,7 @@
       <div class="vheader-edit">
         <span><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;购物车</span>
         <span><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;邮箱</span>
-        <span @click="login"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;登录</span>
-        <span><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;退出</span>
+        <span v-if="!isLogin" @click="login"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;登录</span>
       </div>
     </div>
     <sub-header></sub-header>
@@ -38,6 +38,7 @@
 
     import comp_header_A from '../test/vueCompHeader'
     import subheader from  "../test/subContentHander"
+    import {mapGetters} from 'vuex'
 
     export default {
         name: "header",
@@ -112,6 +113,12 @@
               $("#header-url").removeClass('li-content-h');
             },500)
           }
+        },
+        computed: {
+          ...mapGetters({
+            loginInfo: 'getLoginInfo',
+            isLogin: 'isLogin'
+          }),
         },
         components: {
           "comp-header-a" : comp_header_A,
