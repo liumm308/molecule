@@ -115,13 +115,19 @@ import loginInfo from "../store/modules/loginInfo";
             },500)
           },
           testMyVue: function () {
-            console.log(this.isLogin);
-            console.log(this.loginInfo);
+            console.log(document.childNodes);
+            console.log(document.URL);
+            console.log(document.domain);
+            console.log(document.referrer);
+            document.cookie = "username=John Smith; expires=Thu";
+            console.log(document.cookie);
+
           },
           outLogin: function () {
             this.$store.dispatch("setLoginInfo",'');
             this.$store.dispatch("setLoginState",false);
             this.LocalStorage.clearItem();
+            this.$router.push({name: 'login'});
           }
         },
         computed: {

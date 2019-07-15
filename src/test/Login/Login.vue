@@ -107,7 +107,7 @@
                        //this.$store.commit('setNewData',"dddddddddddddddd");
                        //this.$store.commit("setOthersContent",'others Data');
                        //console.log(this.$store.getters.showOthersContent);
-
+                       console.log(document.cookie);
                      } else {
                        this.$Message.error('登录失败');
                      }
