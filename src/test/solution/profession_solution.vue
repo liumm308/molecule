@@ -43,10 +43,9 @@
       }
     },
     mounted(){
-
+      this.learnOn();
     },
     created(){
-        this.learnOn();
     },
     components:{
 
@@ -87,10 +86,10 @@
       }
     },
     mounted(){
-
+      this.learnOn();
     },
     created(){
-      this.learnOn();
+
     },
     components:{
 

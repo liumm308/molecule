@@ -1,4 +1,5 @@
 import loginInfo from "../store/modules/loginInfo";
+<!--suppress ALL -->
 <template>
   <div class="vheader">
     <div class="vheader-title">
@@ -41,106 +42,147 @@ import loginInfo from "../store/modules/loginInfo";
     import subheader from  "../test/subContentHander"
     import {mapGetters} from 'vuex'
 
-    export default {
-        name: "header",
-        data: function () {
-          return{
-            hData: [
-              {
-                name: '云产品',
-                url: 'product',
-                value: [
-                        {name: "产品分类", url: "product_classification", content: [{name: "计算类"},{name: "存储类"},{name: "网络类"}]},
-                        {name: "产品精选", url: "product_competitive", content: [{name: "沃云云盘"},{name: "高效块存储"},{name: "虚拟路由器"}]},
-                        {name: "云数据库", url: "product_redis", content: [{name: "云数据库POLARDB"},{name: "云数据库RDS"},{name: "云数据库 MariaDB 版"}]},
-                        {name: "云服务器", url: "product_nova", content: [{name: "云服务器 ECS "},{name: "弹性裸金属服务器"},{name: "轻量应用服务器"},{name: "FPGA 云服务器"},{name: "GPU 云服务器"},{name: "专有宿主机"}]},
-                        {name: "云存储", url: "product_cinder", content: [{name: "对象存储 OSS"},{name: "文件存储"},{name: "块存储"},{name: "日志存储"},{name: "归档存储"}]},
-                        {name: "容器服务", url: "product_docker", content: [{name: "容器服务 Kubernetes 版"},{name: "弹性容器实例 ECI NEW"},{name: "容器镜像服务"},{name: "弹性编排"}]}
-                      ]
-              },
-              {
-                name: '解决方案',
-                url: "solution",
-                value: [
-                  {name: "通用解决方案", url: "public_solution", content: [{name: "网站"},{name: "IPv6解决方案"},{name: "企业互联网架构"}]},
-                  {name: "行业解决方案", url: "profession_solution", content: [{name: "新金融 "},{name: "新制造"},{name: "智能工业"},{name: "大媒体"},{name: "交通物流"},{name: "教育"}]},
-                  {name: "安全解决方案", url: "product", content: [{name: " 新零售安全"},{name: "政务云安全"},{name: "互联网金融安全"},{name: "社交/媒体spam"},{name: "游戏安全"}]},
 
-                ]
-              },
-              {
-                name: '支持与服务',
-                url: "product",
-                value: [
-                  {name: "服务", url: "product", content: [{name: "咨询与设计"},{name: "迁移与部署"},{name: "运维与管理"},{name: "优化与提升"}]},
-                  {name: "支持中心", url: "product", content: [{name: "智能顾问"},{name: "联系客服"},{name: "公告"}]}
-                ]
-              },
-              {
-                name: '开发者',
-                url: "product",
-                value: [
-                      {name: "API中心", url: "product", content: [{name: "API错误中心"},{name: "SDK"},{name: "Java 开发者手册"},{name: "API Explorer"}]},
-                      {name: "开源社区", url: "product", content: [{name: "代码托管 Git"},{name: "项目管理"},{name: "大数据竞赛"},{name: "AI学习"}]},
-                      {name: "开源资源和工具", url: "product", content: [{name: "天池实验室"}]},
-                      {name: "开发者平台", url: "product", content: [{name: "Apache RocketMQ"},{name: "Apache Dubbo（孵化）"},{name: " Apache Weex（孵化）"},{name: "PouchContainer"},{name: "OpenMessaging"},{name: "Dragonfly"}]}
-                    ]
-              }
+    let yT = yieldTestFunc();
+
+    let testVue = {
+      name: "header",
+        data: function () {
+      return{
+        hData: [
+          {
+            name: '云产品',
+            url: 'product',
+            value: [
+              {name: "产品分类", url: "product_classification", content: [{name: "计算类"},{name: "存储类"},{name: "网络类"}]},
+              {name: "产品精选", url: "product_competitive", content: [{name: "沃云云盘"},{name: "高效块存储"},{name: "虚拟路由器"}]},
+              {name: "云数据库", url: "product_redis", content: [{name: "云数据库POLARDB"},{name: "云数据库RDS"},{name: "云数据库 MariaDB 版"}]},
+              {name: "云服务器", url: "product_nova", content: [{name: "云服务器 ECS "},{name: "弹性裸金属服务器"},{name: "轻量应用服务器"},{name: "FPGA 云服务器"},{name: "GPU 云服务器"},{name: "专有宿主机"}]},
+              {name: "云存储", url: "product_cinder", content: [{name: "对象存储 OSS"},{name: "文件存储"},{name: "块存储"},{name: "日志存储"},{name: "归档存储"}]},
+              {name: "容器服务", url: "product_docker", content: [{name: "容器服务 Kubernetes 版"},{name: "弹性容器实例 ECI NEW"},{name: "容器镜像服务"},{name: "弹性编排"}]}
+            ]
+          },
+          {
+            name: '解决方案',
+            url: "solution",
+            value: [
+              {name: "通用解决方案", url: "public_solution", content: [{name: "网站"},{name: "IPv6解决方案"},{name: "企业互联网架构"}]},
+              {name: "行业解决方案", url: "profession_solution", content: [{name: "新金融 "},{name: "新制造"},{name: "智能工业"},{name: "大媒体"},{name: "交通物流"},{name: "教育"}]},
+              {name: "安全解决方案", url: "product", content: [{name: " 新零售安全"},{name: "政务云安全"},{name: "互联网金融安全"},{name: "社交/媒体spam"},{name: "游戏安全"}]},
+
+            ]
+          },
+          {
+            name: '支持与服务',
+            url: "product",
+            value: [
+              {name: "服务", url: "product", content: [{name: "咨询与设计"},{name: "迁移与部署"},{name: "运维与管理"},{name: "优化与提升"}]},
+              {name: "支持中心", url: "product", content: [{name: "智能顾问"},{name: "联系客服"},{name: "公告"}]}
+            ]
+          },
+          {
+            name: '开发者',
+            url: "product",
+            value: [
+              {name: "API中心", url: "product", content: [{name: "API错误中心"},{name: "SDK"},{name: "Java 开发者手册"},{name: "API Explorer"}]},
+              {name: "开源社区", url: "product", content: [{name: "代码托管 Git"},{name: "项目管理"},{name: "大数据竞赛"},{name: "AI学习"}]},
+              {name: "开源资源和工具", url: "product", content: [{name: "天池实验室"}]},
+              {name: "开发者平台", url: "product", content: [{name: "Apache RocketMQ"},{name: "Apache Dubbo（孵化）"},{name: " Apache Weex（孵化）"},{name: "PouchContainer"},{name: "OpenMessaging"},{name: "Dragonfly"}]}
             ]
           }
+        ]
+      }
+    },
+      created: function () {
+        this.getWindowSize();
+      },
+      mounted: function() {
+        this.getWindowSize();
+      },
+      methods: {
+        getWindowSize: function () {
+          let height_W = $(window).height();
+          let height = height_W - 80;
+          $('.icon-content').height(height);
+          $('.li-content').height(height);
         },
-        created: function () {
-          this.getWindowSize();
+        goto: function (url) {
+          this.$router.push({name: url})
         },
-        mounted: function() {
-          this.getWindowSize();
+        login: function(){
+          this.$router.push({path: 'login'});
         },
-        methods: {
-          getWindowSize: function () {
-            let height_W = $(window).height();
-            let height = height_W - 80;
-            $('.icon-content').height(height);
-            $('.li-content').height(height);
-          },
-          goto: function (url) {
-            this.$router.push({name: url})
-          },
-          login: function(){
-            this.$router.push({path: 'login'});
-          },
-          hoverHidden: function () {
-            $("#header-url").addClass('li-content-h');
-            setTimeout(function () {
-              $("#header-url").removeClass('li-content-h');
-            },500)
-          },
-          testMyVue: function () {
-            console.log(document.childNodes);
-            console.log(document.URL);
-            console.log(document.domain);
-            console.log(document.referrer);
-            document.cookie = "username=John Smith; expires=Thu";
-            console.log(document.cookie);
+        hoverHidden: function () {
+          $("#header-url").addClass('li-content-h');
+          setTimeout(function () {
+            $("#header-url").removeClass('li-content-h');
+          },500)
+        },
+        testMyVue: function () {
+          /*
+          console.log(document.childNodes);
+          console.log(document.URL);
+          console.log(document.domain);
+          console.log(document.referrer);
+          document.cookie = "username=John Smith; expires=Thu";
+          console.log(document.cookie);
+          */
+          /*let a = this.yieldTest();*/
+         let FirstResult = yT.next();
+         let SecondResult =  yT.next();
+         let SirldResult =  yT.next();
 
-          },
-          outLogin: function () {
-            this.$store.dispatch("setLoginInfo",'');
-            this.$store.dispatch("setLoginState",false);
-            this.LocalStorage.clearItem();
-            this.$router.push({name: 'login'});
+          console.log(FirstResult);
+          console.log(SecondResult);
+          console.log(SirldResult);
+        },
+        outLogin: function () {
+          this.$store.dispatch("setLoginInfo",'');
+          this.$store.dispatch("setLoginState",false);
+          this.LocalStorage.clearItem();
+          this.$router.push({name: 'login'});
+        },
+
+        testA: function () {
+          return "testA"
+        },
+
+        testB: function (c) {
+          return c+" TestB";
+        },
+        yieldTest: function(){
+          let self = this;
+          function *test(){
+            let c = null;
+            yield c = self.testA();
+            yield self.testB(c);
+            return "end";
           }
+          return test()
         },
-        computed: {
-          ...mapGetters({
-            loginInfo:'getLoginInfo',
-            isLogin:'isLogin'
-          }),
-        },
-        components: {
-          "comp-header-a" : comp_header_A,
+      },
+      computed: {
+      ...mapGetters({
+          loginInfo:'getLoginInfo',
+          isLogin:'isLogin'
+        }),
+      },
+      components: {
+        "comp-header-a" : comp_header_A,
           "sub-header": subheader
-        }
+      }
+    };
+
+    function *yieldTestFunc() {
+      let paramsA, paramsB, paramsC = null;
+      yield paramsA = testVue.methods.testA();
+      yield paramsB = testVue.methods.testB(paramsA);
+      yield paramsC = testVue.methods.testB(paramsB);
+      return 'end'
     }
+
+    export default testVue
+
 </script>
 
 <style scoped>
