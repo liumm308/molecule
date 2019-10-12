@@ -21,7 +21,7 @@ import loginInfo from "../store/modules/loginInfo";
           </div>
         </div>
         <div class="vheader-item" @click="testMyVue">
-          沃云
+          Paper工作室
         </div>
       </div>
       <div class="vheader-edit">
@@ -42,8 +42,6 @@ import loginInfo from "../store/modules/loginInfo";
     import subheader from  "../test/subContentHander"
     import {mapGetters} from 'vuex'
 
-
-    let yT = yieldTestFunc();
 
     let testVue = {
       name: "header",
@@ -68,7 +66,7 @@ import loginInfo from "../store/modules/loginInfo";
             value: [
               {name: "通用解决方案", url: "public_solution", content: [{name: "网站"},{name: "IPv6解决方案"},{name: "企业互联网架构"}]},
               {name: "行业解决方案", url: "profession_solution", content: [{name: "新金融 "},{name: "新制造"},{name: "智能工业"},{name: "大媒体"},{name: "交通物流"},{name: "教育"}]},
-              {name: "安全解决方案", url: "product", content: [{name: " 新零售安全"},{name: "政务云安全"},{name: "互联网金融安全"},{name: "社交/媒体spam"},{name: "游戏安全"}]},
+              {name: "安全解决方案", url: "security_solution", content: [{name: " 新零售安全"},{name: "政务云安全"},{name: "互联网金融安全"},{name: "社交/媒体spam"},{name: "游戏安全"}]},
 
             ]
           },
@@ -126,16 +124,91 @@ import loginInfo from "../store/modules/loginInfo";
           console.log(document.referrer);
           document.cookie = "username=John Smith; expires=Thu";
           console.log(document.cookie);
-          */
-          /*let a = this.yieldTest();*/
+          let a = this.yieldTest();
+          let a = this.yieldTest();
+          let contents = null;
+         do {
+           contents = a.next();
+           console.log(contents);
+         } while (!contents.done);
+
+         let yT = yieldTestFunc();
          let FirstResult = yT.next();
          let SecondResult =  yT.next();
          let SirldResult =  yT.next();
-
+         let endResult =  yT.next();
           console.log(FirstResult);
           console.log(SecondResult);
           console.log(SirldResult);
+          console.log(endResult);
+          let set = new Set(document.querySelectorAll('div'));
+          console.log(set.size);
+
+          set = new Set(['red', 'green', 'blue']);
+
+          for (let item of set.keys()) {
+            console.log(item);
+          }
+          // red
+          // green
+          // blue
+
+          for (let item of set.values()) {
+            console.log(item);
+          }
+          // red
+          // green
+          // blue
+
+          for (let item of set.entries()) {
+            console.log(item);
+          }
+          // ["red", "red"]
+          // ["green", "green"]
+          // ["blue", "blue"]
+
+          */
+
+          this.testAsymc("liuMingming").then(result =>{
+            console.log(result)
+          })
         },
+
+        testAsymc: async function getDataByName(name){
+          try{
+            const age = await this.getAgeByName(name);
+            const info = await this.getInfoByNameAndAge(name,age);
+            return info;
+          }
+          catch (e) {
+             return e;
+          }
+        },
+
+        getAgeByName: function(name){
+          return new Promise( (s,r)=>{
+              let d = this.timeOut();
+              s(d)
+              r(error)
+            }
+          )
+        },
+        getInfoByNameAndAge: function(name,age){
+          return {
+            name: name,
+            age: age,
+            adress: "太白南路二号",
+            sex: "男"
+          }
+        },
+
+        timeOut: function(){
+          setTimeout(function () {
+              return 18;
+          },6000)
+        },
+
+
         outLogin: function () {
           this.$store.dispatch("setLoginInfo",'');
           this.$store.dispatch("setLoginState",false);
@@ -150,7 +223,7 @@ import loginInfo from "../store/modules/loginInfo";
         testB: function (c) {
           return c+" TestB";
         },
-        yieldTest: function(){
+        /*yieldTest: function(){
           let self = this;
           function *test(){
             let c = null;
@@ -159,6 +232,13 @@ import loginInfo from "../store/modules/loginInfo";
             return "end";
           }
           return test()
+        },*/
+        yieldTest: function *test(){
+          let self = this;
+          let c = null;
+          yield c = self.testA();
+          yield self.testB(c);
+          return "end";
         },
       },
       computed: {
@@ -263,6 +343,7 @@ import loginInfo from "../store/modules/loginInfo";
   .a:hover .icon-content{
     display:flex;
     flex-direction: column;
+    flex: 1;
   }
 
   .a:hover .icon-size{

@@ -1,7 +1,7 @@
 <template>
   <div class="security-solution">
     <div class="security-solution-content">
-
+      <video :src="movie_src" controls="controls"></video>
     </div>
   </div>
 </template>
@@ -11,13 +11,18 @@
         name: "security_solution",
         data: function () {
           return{
-
+            movie_src : ''
           }
         },
         props: {},
-        methods: {},
-        mounted: function () {
+        methods: {
 
+          player:function() {
+            this.movie_src = '../../assets/video/2017429152623103.flv';
+          }
+        },
+        mounted: function () {
+          this.player();
         },
         components: {
 

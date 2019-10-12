@@ -1,0 +1,33 @@
+.Login-all{}
+
+.register-all{}
+
+.Login-all,  .ivu-card-body{
+  padding: 16px;
+  display: flex;
+  flex: 1;
+  height:  calc(100% - 61px);
+  justify-content: center;
+  align-items: center;
+}
+
+.Login-all,  .ivu-form-item {
+  margin-bottom: 18px;
+  vertical-align: top;
+  zoom: 1;
+}
+
+.register-all .ivu-card-body{
+  padding: 16px;
+  display: flex;
+  flex: 1;
+  height: calc(100% - 61px);
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.register-all .ivu-form-item {
+  margin-bottom: 18px;
+  vertical-align: top;
+  zoom: 1;
+}

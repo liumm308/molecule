@@ -9,6 +9,7 @@ import LoginRouter from './Login'
 Vue.use(Router);
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -39,15 +40,6 @@ export default new Router({
             needIn: true
           },
           component: () => import('@/test/contents.vue')
-        },
-        {
-          path: '/gojs',
-          name: 'go',
-          meta: {
-            title: '流程图',
-            needIn: true
-          },
-          component: () => import('@/test/gojs/test.vue')
         },
         {
           path: '/card',

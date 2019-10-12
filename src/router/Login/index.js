@@ -15,6 +15,15 @@ export default[{
         needIn: false
       },
       component: () => import('@/test/Login/Login.vue')
+    },
+    {
+      path: '/register',
+      name: 'register',
+      meta: {
+        title: '注册',
+        needIn: false
+      },
+      component: () => import('@/test/Login/Register.vue')
     }
   ]
 }]

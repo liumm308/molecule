@@ -31,6 +31,14 @@ export default[{
         needIn: true
       },
       component: () => import('@/test/solution/profession_solution')
+    },{
+      path: '/security_solution',
+      name: 'security_solution',
+      meta: {
+        title: '安全解决方案',
+        needIn: true
+      },
+      component: () => import('@/test/solution/security_solution')
     }
   ]
 }]

@@ -1,6 +1,6 @@
 <template>
     <div class="login">
-       <div class="login-inner">
+       <div class="login-inner Login-all">
          <Card class='card'>
            <p  class="card-title" slot="title"><img src="../../assets/img/maobi.png" class="card-title-img-position" width="28">  Paper工作室</p>
            <Form ref="loginForm" :rules="ruleValidate" :model="loginForm" class="card-content">
@@ -20,10 +20,10 @@
                </CheckboxGroup>
              </FormItem>
              <FormItem class="login-btn">
-               <Button type="primary" @click="loginSubmit('loginForm')">登录</Button>
+               <Button type="primary" long @click="loginSubmit('loginForm')">登录</Button>
              </FormItem>
              <FormItem class="register">
-               <p>免费注册</p>
+               <p @click="register">免费注册</p>
              </FormItem>
            </Form>
          </Card>
@@ -102,11 +102,6 @@
                        this.LocalStorage.inItemByKey("LoginInfo", response.data.body[0]);
                        this.$Message.success("登录成功");
                        this.$router.push({path: '/index'});
-                        //console.log(this.$store.state.otherContents);
-                        //console.log(this.$store.getters.showOthersContent);
-                       //this.$store.commit('setNewData',"dddddddddddddddd");
-                       //this.$store.commit("setOthersContent",'others Data');
-                       //console.log(this.$store.getters.showOthersContent);
                        console.log(document.cookie);
                      } else {
                        this.$Message.error('登录失败');
@@ -118,6 +113,9 @@
                 this.$Message.error('登录失败');
               }
             })
+          },
+          register: function () {
+            this.$router.push({ path: '/register'});
           }
         },
         mounted(){
@@ -131,91 +129,9 @@
 </script>
 
 <style scoped>
-
-  .login{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #2c98c1;
-  }
-
-  .login-inner{
-    width: 100%;
-    height: 100%;
-    background: -webkit-linear-gradient(left,rgba(255,255,255,0.5), rgba(255,255,255,0),rgba(255,255,255,0.5));
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-  }
-
-  .card{
-    width: 400px;
-    height: 350px;
-    box-shadow: rgba(128, 128, 128, 0.52) 0 15px 15px;
-  }
-
-  .card-title{
-    height: 30px;
-    line-height: 30px;
-    font-size: 20px;
-  }
-
-  .card-title-img-position{
-    position: absolute;
-    top: 15px;
-    left: 100px;
-  }
-
-
-  .card-content{
-    width: 80%;
-  }
-
-  .card-content-icon{
-    font-size: 16px;
-  }
-
-  .remember-me{
-     display: flex;
-  }
-
-  .login-btn{
-    margin-bottom: 0 !important;
-  }
-
-  .register{
-    font-size: smaller;
-    color: grey;
-    display: flex;
-    justify-content: flex-end;
-    cursor: pointer;
-  }
-
-  .register:hover{
-    color: #2767f7;
-  }
-
-
+  @import "./Login.css";
 </style>
 
 <style>
-  .ivu-card-body{
-    padding: 16px;
-    display: flex;
-    flex: 1;
-    height:  calc(100% - 61px);
-    justify-content: center;
-    align-items: center;
-  }
-
-  .ivu-form-item {
-    margin-bottom: 18px;
-    vertical-align: top;
-    zoom: 1;
-  }
-
+  @import "./LoginAll.css";
 </style>
